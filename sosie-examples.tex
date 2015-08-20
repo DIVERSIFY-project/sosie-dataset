@@ -1,0 +1,93 @@
+
+\documentclass[table]{sig-alternate}
+
+\usepackage[T1]{fontenc} %% to get Type 1 fonts
+\usepackage[utf8]{inputenc} %% to enable non ASCII characters
+%\usepackage[a4paper]{geometry} %% to change the margins
+
+\usepackage[]{mdframed}
+\usepackage[]{tabularx}
+\usepackage[]{graphicx}
+\usepackage[]{xcolor}
+\usepackage[]{pdfcomment}
+\usepackage{color}
+\usepackage{listings} 
+\usepackage[linesnumbered]{algorithm2e}
+%\usepackage{framed}
+\usepackage{paralist}
+\usepackage{array}
+\usepackage{numprint}
+%\usepackage[table]{xcolor}
+
+%\usepackage[font=footnotesize,labelfont=bf,justification=centering]{caption}
+\usepackage[justification=centering]{caption}
+
+\newtheorem{definition}{Definition}
+\lstset{ 
+  basicstyle=\ttfamily\scriptsize,        
+  captionpos=t,                    
+  commentstyle=\color{cyan},    
+  escapeinside={\%*}{*)},          
+  keywordstyle=\color{blue},       
+  stringstyle=\color{red},       
+  numberstyle=\tiny\color{gray}, 
+  stepnumber=2,                    
+  title=\lstname,                   
+  language=Java,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  extendedchars=true,              
+  showspaces=false,                
+  showstringspaces=false,          
+  showtabs=false,                  
+  tabsize=2                       
+} 
+
+
+
+%\newcommand{\TODO}[1]{\textcolor{red}{#1}\pdfcomment[color=yellow,open=false]{#1}}
+\newcommand{\nbprograms}{\numprint{6}\xspace}
+\newcommand{\nbsosies}{XXX\xspace}
+\newcommand{\TODO}[1]{\textcolor{red}{#1}}
+\newcommand{\todo}{\TODO}
+
+
+% ISSTA title: Tailored Source Code Transformations to Synthesize Computationally Diverse Program Variants
+\title{}
+\author{}
+
+%Hypothesis: at every transplantation point where we can delete a statement, we can also add and replace.
+%Hypothesis: 
+%- there are more sosies in transplantation points that are covered by a small number of test cases.
+%- there are more sosies in transplantation points that are in private methods.
+%Hypothesis: the most interesting sosies are at transplantation points that are covered by a large number of test cases
+%In cases of delete and replace => let us check if the AST that we delete is present elsewhere in the program.
+%Are all trials in “hash*” methods succesful sosies?
+
+\begin{document}
+\maketitle
+\section{Good sosies}
+\input{writestringtofile.tex}
+\input{tojson.tex}
+\input{decode.tex}
+\input{getentry.tex}
+\input{setseed.tex}
+\input{createtypevariablemap.tex}
+\input{capture-tostring.tex}
+\input{invoke.tex}
+\section{To-be-discussed sosies}
+\input{matches.tex}
+\input{isthreadsafe.tex}
+\section{Bad sosies}
+\section{Sosies in Rhino}
+\input{rhino-getcharignorelineend.tex}
+\input{rhino-hashcode.tex}
+\input{rhino-setlp.tex}
+\input{rhino-ensureIndex.tex}
+\input{rhino-setvalidattributes.tex}
+\input{rhino-stopmethod.tex}
+\input{rhino-convertarg.tex}
+% to add the bibliography, uncomment the following lines
+% \bibliography{references}
+% \bibliographystyle{plain}
+\end{document}
