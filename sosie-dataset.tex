@@ -68,26 +68,29 @@
 \maketitle
 \input{intro.tex}
 \section{Good sosies}
-\input{writestringtofile.tex}
-\input{tojson.tex}
+\input{rhino-hashcode.tex} %plastic computation
+\input{tojson.tex} %plastic computation
+\input{writestringtofile.tex} %remove check
+\input{rhino-setvalidattributes.tex} %remove check
+\input{rhino-stopmethod.tex} %hits a rigidity
+\input{rhino-convertarg.tex} %reduces the output space
 \input{decode.tex}
 \input{getentry.tex}
 \input{setseed.tex}
-\input{createtypevariablemap.tex}
-\input{capture-tostring.tex}
 \input{invoke.tex}
+\input{rhino-getcharignorelineend.tex}
+\section{Useless sosies}
+\label{sec:useless}
+\input{capture-tostring.tex} %adds redundant code
+\input{rhino-ensureIndex.tex}
 \section{To-be-discussed sosies}
+\input{createtypevariablemap.tex}
 \input{matches.tex}
 \input{isthreadsafe.tex}
-\section{Bad sosies}
-\section{Sosies in Rhino}
-\input{rhino-getcharignorelineend.tex}
-\input{rhino-hashcode.tex}
 \input{rhino-setlp.tex}
-\input{rhino-ensureIndex.tex}
-\input{rhino-setvalidattributes.tex}
-\input{rhino-stopmethod.tex}
-\input{rhino-convertarg.tex}
+\section{Bad sosies}
+
+
 % to add the bibliography, uncomment the following lines
 % \bibliography{references}
 % \bibliographystyle{plain}

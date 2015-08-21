@@ -4,3 +4,11 @@ In this document we present a dataset of sosies that have been generated for lar
 The objective is to illustrate the diversity of situations in which we can generate good or bad sosies, as defined in our previous work \footnote{\url{https://hal.archives-ouvertes.fr/file/index/docid/938855/filename/sosies.pdf}}. 
 
 This dataset will grow in the future and will serve as the basis to establish a taxonomy of different code regions where we can synthesize valuable program sosies. 
+
+\begin{description}
+  [Redundant code.] There are zones in the computation that are redundant (e.g., a method call performed twice), which can be safely removed and still produce a useful variant.
+  [Extra functionality.] Application developers implement functionalities that can handle many different situations, yet, some of these functions might never be used or the situations that the program can handle might never occur when the application is in production. These are areas that can be safely removed or replaced while still producing useful variants.
+  [Platform specificities] Listing \ref{lst:getCharIgnoreLineEnd}
+  [Plastic computation / specification] Listing \ref{lst:hashcode}
+  [Checks] Listing \ref{lst:setAttributes}
+\end{description}
