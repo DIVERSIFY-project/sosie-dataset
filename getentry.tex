@@ -1,16 +1,14 @@
-%CommonMath-Array2DRowRealMatrix.java:553
+%org.apache.commons.math4.linear.Array2DRowRealMatrix
 \begin{minipage}{\columnwidth}
 \begin{lstlisting}[caption={Two variants of \texttt{getEntry} in commons.maths},language=java,numbers=left]
 // Original program
 public double getEntry(final int row, final int column) throws OutOfRangeException {
   MatrixUtils.checkMatrixIndex(this, row, column);
-  int n = 1; //Transplant
   return data[row][column];
 }
 
 // sosie
 public double getEntry(final int row, final int column) throws OutOfRangeException {
-  int n = 1; //Transplant
   return data[row][column];
 }
 \end{lstlisting}

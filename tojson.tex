@@ -1,5 +1,11 @@
+Listing \ref{lst:tojson} shows a sosie of  the \texttt{toJson()} method from the Google Gson library. 
+The last statement of the original method is replaced by another one: instead of setting the serialization format of the \texttt{writer} it set the indent format. 
+Each variant creates a JSon with slightly different formats,  and none of these formatting decisions are part of the specified domain (and actually, specifying the exact formatting of the JSon String could be considered as over-specification). 
+
+Here, sosiefication exploits a specific kind of plasticity that we call ``code rigidities''. We have found many regions in programs where statements assign specific values to variables, while any value in a given range would be as good. Fixing one value is what we call a rigidity, and changing this value is an interesting way to create sosies that modify the program state but still deliver a correct service.
+
 \begin{minipage}{\columnwidth}
-\begin{lstlisting}[caption={\texttt{toJson} in GSON and a sosie},language=java,numbers=left]
+\begin{lstlisting}[caption={\texttt{toJson} in GSON and a sosie},label={lst:tojson},language=java,numbers=left]
 
 // Original program
 void toJson(Object src, Type typeOfSrc, JsonWriter writer){
