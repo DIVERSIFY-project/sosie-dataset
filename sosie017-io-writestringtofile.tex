@@ -19,7 +19,8 @@ void writeStringToFile(File file, String data, Charset encoding, boolean append)
 // sosie  
 void writeStringToFile(File file, String data, Charset encoding, boolean append) throws IOException {
   OutputStream out = null;
-  out = new FileOutputStream(file, append); //this statement replaces the original
+  %*{\textbf{\color{orange}statement replaced by following}}*)
+  out = new FileOutputStream(file, append); 
   IOUtils.write(data, out, encoding);
   out.close(); }
 \end{lstlisting}

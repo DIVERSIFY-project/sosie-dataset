@@ -4,6 +4,7 @@ Yet, this is a shortcut in the computation, i.e., if we remove the \texttt{retur
 
 %com.google.json.stream.JsonReader:957
 %source:"Sosies-GSON-21-08-2015.txt" in dropbox
+%this sosie exploits a shortcut in the original, which can be ignored without changing the functionality
 \begin{minipage}{\columnwidth}
 \begin{lstlisting}[caption={\texttt{nextLong} in GSon and a sosie},label={lst:nextLong},language=java,numbers=left]
 //original
@@ -34,7 +35,7 @@ public long nextLong() throws IOException {
       long result = Long.parseLong(peekedString);
       peeked = PEEKED_NONE;
       pathIndices[stackSize - 1]++;
-      *{\textbf{\color{orange}assignment deleted}}*)
+      %*{\textbf{\color{orange}assignment deleted}}*)
       } 
   *{\color{grey}...}*)
   return result;}
