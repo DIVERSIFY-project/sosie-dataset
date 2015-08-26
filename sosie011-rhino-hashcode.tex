@@ -7,21 +7,12 @@ Listing \ref{lst:hashcode} is an example of such a sosie.
 
 % position: org.mozilla.classfile.FieldOrMethodRef:4776
 \begin{minipage}{\columnwidth}
-\begin{lstlisting}[caption={\texttt{hashCode} in Rhino and a sosie},label={lst:hashcode},language=java,numbers=left]
+\begin{lstlisting}[caption={\texttt{hashCode} in Rhino and a sosie},label={lst:hashcode},numbers=left]
 //original
 public int hashCode(){}
   if (hashCode == -1) {
-  int h1 = className.hashCode();
-  int h2 = name.hashCode();
-  int h3 = type.hashCode();
-  hashCode = h1 ^ h2 ^ h3;
-  }
-  return hashCode;
-}
-//sosie
-public int hashCode(){}
-  if (hashCode == -1) {
-  int h1 = className.length();
+_- int h1 = className.hashCode();_
+(*+  `int` h1 = className.length();*)
   int h2 = name.hashCode();
   int h3 = type.hashCode();
   hashCode = h1 ^ h2 ^ h3;
@@ -39,3 +30,27 @@ public int hashCode(){}
 \hline
 \end{tabular}
 \end{minipage}
+
+
+% //original
+% public int hashCode(){}
+%   if (hashCode == -1) {
+%   _int h1 = className.hashCode();_
+%   (*`int` h1 = className.length();*)
+%   int h2 = name.hashCode();
+%   int h3 = type.hashCode();
+%   hashCode = h1 ^ h2 ^ h3;
+%   }
+%   return hashCode;
+% }
+% //sosie
+% public int hashCode(){}
+%   if (hashCode == -1) {
+%   %*\color{orange}the assignment is replaced by the following*)
+%     `int` h1 = className.length();
+%     int h2 = name.hashCode();
+%     int h3 = type.hashCode();
+%     hashCode = h1 ^ h2 ^ h3;
+%   }
+%   return hashCode;
+% }

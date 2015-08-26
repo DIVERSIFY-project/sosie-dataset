@@ -5,31 +5,32 @@ This is an example of an advanced feature implemented in the core part of GSon t
 
 %https://github.com/google/gson/blob/gson-2.3/src/main/java/com/google/gson/internal/$Gson$Types.java:94
 \begin{minipage}{\columnwidth}
-\begin{lstlisting}[caption={\texttt{canonicalize} in EasyMock and a sosie},label={lst:canonicalize},language=java,numbers=left]
+\begin{lstlisting}[caption={\texttt{canonicalize} in GSon and a sosie},label={lst:canonicalize},numbers=left]
 //original
 public static Type canonicalize(Type type) {
-  if (type instanceof Class) {
-    Class<?> c = (Class<?>) type;
-    return c.isArray() ? new GenericArrayTypeImpl(canonicalize(c.getComponentType())) : c;
-    } 
-  else 
-    if (type instanceof ParameterizedType) {
-      ParameterizedType p = (ParameterizedType) type;
-      return new ParameterizedTypeImpl(p.getOwnerType(),p.getRawType(), p.getActualTypeArguments());
-    } 
-    else 
-      if (type instanceof GenericArrayType) {
-        GenericArrayType g = (GenericArrayType) type;
-        return new GenericArrayTypeImpl(g.getGenericComponentType());
-      } 
-      else 
-      if (type instanceof WildcardType) {
-        WildcardType w = (WildcardType) type;
-        return new WildcardTypeImpl(w.getUpperBounds(), w.getLowerBounds());
-      } 
-      else {
-        return type;
-      }
+_-  if (type instanceof Class) {
+-    Class<?> c = (Class<?>) type;
+-    return c.isArray() ? new GenericArrayTypeImpl(canonicalize(c.getComponentType())) : c;
+-    } 
+-  else 
+-    if (type instanceof ParameterizedType) {
+-      ParameterizedType p = (ParameterizedType) type;
+-      return new ParameterizedTypeImpl(p.getOwnerType(),p.getRawType(), p.getActualTypeArguments());
+-    } 
+-    else 
+-      if (type instanceof GenericArrayType) {
+-        GenericArrayType g = (GenericArrayType) type;
+-        return new GenericArrayTypeImpl(g.getGenericComponentType());
+-      } 
+-      else 
+-      if (type instanceof WildcardType) {
+-        WildcardType w = (WildcardType) type;
+-        return new WildcardTypeImpl(w.getUpperBounds(), w.getLowerBounds());
+-      } 
+-      else {
+-        return type;
+-      }_
+(*+ return type;*)
 }
 //sosie
 public static Type canonicalize(Type type) {

@@ -1,31 +1,41 @@
-
-\documentclass[table]{sig-alternate}
-
-\usepackage[T1]{fontenc} %% to get Type 1 fonts
-\usepackage[utf8]{inputenc} %% to enable non ASCII characters
-%\usepackage[a4paper]{geometry} %% to change the margins
+%\documentclass{sig-alternate}
+\documentclass{article}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc} 
 
 \usepackage[]{mdframed}
 \usepackage[]{tabularx}
 \usepackage[]{graphicx}
-\usepackage[]{xcolor}
+\usepackage[table]{xcolor}
 \usepackage[]{pdfcomment}
-\usepackage{color}
 \usepackage{listings} 
 \usepackage[linesnumbered]{algorithm2e}
-%\usepackage{framed}
+\usepackage{framed}
 \usepackage{paralist}
-\usepackage{array}
 \usepackage{numprint}
-\usepackage{ulem}
-%\usepackage[table]{xcolor}
-
-%\usepackage[font=footnotesize,labelfont=bf,justification=centering]{caption}
+\usepackage{color}
+%\usepackage{ulem}
+\usepackage{array}
 \usepackage[justification=centering]{caption}
+\usepackage[inline]{enumitem}
+% \usepackage{tikz}
+% \newcommand\bh{\tikz[remember picture]
+%                   \node (begin highlight) {};
+%                }
+% \newcommand\eh{\tikz[remember picture]
+%                \node (end highlight) {};
+%                \tikz[remember picture, overlay] 
+%                \draw[black,thin] (begin highlight) -- (end
+%     %          \draw[yellow,line width=10pt,opacity=0.3] (begin highlight) -- (end highlight);
+%                 highlight);
+%                }
 
 \newtheorem{definition}{Definition}
 \lstset{ 
-  basicstyle=\ttfamily\scriptsize,        
+  language=Java,
+  basicstyle=\ttfamily\scriptsize,   
+  moredelim=[is][\color{gray}\ttfamily]{_}{_},
+  moredelim=[is][\color{blue}\underbar]{(*}{*)},
   captionpos=t,                    
   commentstyle=\color{cyan},    
   escapeinside={\%*}{*)},          
@@ -34,14 +44,13 @@
   numberstyle=\tiny\color{gray}, 
   stepnumber=2,                    
   title=\lstname,                   
-  language=Java,
   breakatwhitespace=false,         
   breaklines=true,                 
   extendedchars=true,              
   showspaces=false,                
   showstringspaces=false,          
   showtabs=false,                  
-  tabsize=2                       
+  tabsize=2,
 } 
 
 
